@@ -1,6 +1,6 @@
 from requests.utils import dict_from_cookiejar, cookiejar_from_dict
 from requests.packages import urllib3
-from spider.error import TITLEERROR
+from spider.error import TitleError
 from json import JSONDecodeError
 from urllib.parse import quote
 from loguru import logger
@@ -11,7 +11,7 @@ import os
 
 EXCEPTION = (
     JSONDecodeError,
-    TITLEERROR,
+    TitleError,
     Exception,
 )
 
@@ -155,8 +155,8 @@ class Login:
             match = re.search(r'<title>(.*?)</title>', content, re.S)
             title = match.group(1)
             if title != f'{PRODUCT}_淘宝搜索':
-                raise TITLEERROR(f'标题错误，标题:{title}')
-        except TITLEERROR as e:
+                raise TitleError(f'标题错误，标题:{title}')
+        except TitleError as e:
             raise e
         else:
             logger.info(f'网页标题为：{title}')

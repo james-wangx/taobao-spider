@@ -1,4 +1,4 @@
-class TITLEERROR(Exception):
+class TitleError(Exception):
     """
     自定义异常，以验证网页标题
     """
