@@ -136,7 +136,6 @@ class Login:
             logger.error(f'登录失败，原因：')
             raise e
         self.queue_cookies()
-        print(response.json())
         self.redirect_url = response.json()['content']['data']['redirectUrl']
         return True
 
