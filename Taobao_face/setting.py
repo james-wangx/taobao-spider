@@ -22,7 +22,7 @@ PATH = dirname(abspath(__file__))
 # cookies保存路径
 COOKIES_PATH = f'{PATH}/storage/taobao_search_cookies.txt'
 # 待爬取的商品名
-PRODUCT = '华为'
+PRODUCT = 'iphone'
 # 最大页数
 MAX_PAGE = 10
 # 全局会话

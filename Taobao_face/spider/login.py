@@ -149,7 +149,7 @@ class Login:
             response = SESSION.get(url=self.redirect_url, headers=self.headers, verify=False)
             response.raise_for_status()
             content = response.text
-            # 有必要时保存第一页代码，便于调试
+            # # 有必要时保存第一页代码，便于调试
             # with open('success.html', 'w', encoding='utf-8')as file:
             #     file.write(content)
             match = re.search(r'<title>(.*?)</title>', content, re.S)
