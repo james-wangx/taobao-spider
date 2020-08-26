@@ -31,7 +31,7 @@ SESSION = Session()
 NEED_PROXY = False
 # 最大失败次数
 MAX_FAIL_TIME = 10
-# 获取代理地址
+# 代理接口
 PROXY_POOL_URL = 'http://127.0.0.1:5555/random'
 # 正确的状态代码
 VALID_STATUSES = [200]
