@@ -3,7 +3,7 @@
 
 
 ## (1)找到用户信息
-访问https://login.taobao.com/member/login.jhtml?redirectURL=http%3A%2F%2Fs.taobao.com%2Fsearch%3Fq%3Diphone
+清除cookies，访问https://login.taobao.com/member/login.jhtml?redirectURL=http%3A%2F%2Fs.taobao.com%2Fsearch%3Fq%3Diphone
 
 点击登录，用浏览器或抓包工具找到下图所示url，复制相关用户信息
 
@@ -24,6 +24,9 @@ python run.py -h
 <img src="https://img-blog.csdnimg.cn/202008292128128.jpg">
 
 ## (4)运行
+`
+python run.py product
+`
 
 <img src="https://img-blog.csdnimg.cn/20200829213558210.jpg">
 
