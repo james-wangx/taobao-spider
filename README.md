@@ -1,6 +1,6 @@
 # 淘宝全站爬虫
 
-<img src="https://img-blog.csdnimg.cn/cover1/0826/428236122461700295.jpg" width="800" height="700" >
+
 
 ## 主要活动阵地
 
