@@ -1,0 +1,66 @@
+2020-08-29 08:16:25.159 | SUCCESS  | spider.login:queue_cookies:205 - 保存cookies文件成功！
+2020-08-29 08:16:25.163 | WARNING  | spider.login:logged:167 - 需要安全验证
+2020-08-29 08:16:26.765 | INFO     | spider.login:print_title:193 - 网页标题为：OPPO_淘宝搜索
+2020-08-29 08:16:26.768 | INFO     | spider.crawler:start:59 - Add http://s.taobao.com/search?q=OPPO&bcoffset=6&ntoffset=6&p4ppushleft=1%2C48&s=0 to redis.
+2020-08-29 08:16:26.770 | INFO     | spider.crawler:start:59 - Add http://s.taobao.com/search?q=OPPO&bcoffset=3&ntoffset=3&p4ppushleft=1%2C48&s=44 to redis.
+2020-08-29 08:16:26.772 | INFO     | spider.crawler:start:59 - Add http://s.taobao.com/search?q=OPPO&bcoffset=0&ntoffset=0&p4ppushleft=1%2C48&s=88 to redis.
+2020-08-29 08:16:26.776 | INFO     | spider.crawler:start:59 - Add http://s.taobao.com/search?q=OPPO&bcoffset=-3&ntoffset=-3&p4ppushleft=1%2C48&s=132 to redis.
+2020-08-29 08:16:26.781 | INFO     | spider.crawler:start:59 - Add http://s.taobao.com/search?q=OPPO&bcoffset=-6&ntoffset=-6&p4ppushleft=1%2C48&s=176 to redis.
+2020-08-29 08:16:26.783 | INFO     | spider.crawler:start:59 - Add http://s.taobao.com/search?q=OPPO&bcoffset=-9&ntoffset=-9&p4ppushleft=1%2C48&s=220 to redis.
+2020-08-29 08:16:26.786 | INFO     | spider.crawler:start:59 - Add http://s.taobao.com/search?q=OPPO&bcoffset=-12&ntoffset=-12&p4ppushleft=1%2C48&s=264 to redis.
+2020-08-29 08:16:26.796 | INFO     | spider.crawler:start:59 - Add http://s.taobao.com/search?q=OPPO&bcoffset=-15&ntoffset=-15&p4ppushleft=1%2C48&s=308 to redis.
+2020-08-29 08:16:26.801 | INFO     | spider.crawler:start:59 - Add http://s.taobao.com/search?q=OPPO&bcoffset=-18&ntoffset=-18&p4ppushleft=1%2C48&s=352 to redis.
+2020-08-29 08:16:26.805 | INFO     | spider.crawler:start:59 - Add http://s.taobao.com/search?q=OPPO&bcoffset=-21&ntoffset=-21&p4ppushleft=1%2C48&s=396 to redis.
+2020-08-29 08:16:26.814 | INFO     | spider.crawler:schedule:129 - Schedule http://s.taobao.com/search?q=OPPO&bcoffset=6&ntoffset=6&p4ppushleft=1%2C48&s=0
+2020-08-29 08:16:27.403 | SUCCESS  | spider.crawler:schedule:134 - successful parse http://s.taobao.com/search?q=OPPO&bcoffset=6&ntoffset=6&p4ppushleft=1%2C48&s=0
+2020-08-29 08:16:27.433 | INFO     | spider.crawler:schedule:129 - Schedule http://s.taobao.com/search?q=OPPO&bcoffset=3&ntoffset=3&p4ppushleft=1%2C48&s=44
+2020-08-29 08:16:28.135 | SUCCESS  | spider.crawler:schedule:134 - successful parse http://s.taobao.com/search?q=OPPO&bcoffset=3&ntoffset=3&p4ppushleft=1%2C48&s=44
+2020-08-29 08:16:28.161 | INFO     | spider.crawler:schedule:129 - Schedule http://s.taobao.com/search?q=OPPO&bcoffset=0&ntoffset=0&p4ppushleft=1%2C48&s=88
+2020-08-29 08:16:28.719 | SUCCESS  | spider.crawler:schedule:134 - successful parse http://s.taobao.com/search?q=OPPO&bcoffset=0&ntoffset=0&p4ppushleft=1%2C48&s=88
+2020-08-29 08:16:28.749 | INFO     | spider.crawler:schedule:129 - Schedule http://s.taobao.com/search?q=OPPO&bcoffset=-3&ntoffset=-3&p4ppushleft=1%2C48&s=132
+2020-08-29 08:16:29.553 | SUCCESS  | spider.crawler:schedule:134 - successful parse http://s.taobao.com/search?q=OPPO&bcoffset=-3&ntoffset=-3&p4ppushleft=1%2C48&s=132
+2020-08-29 08:16:29.583 | INFO     | spider.crawler:schedule:129 - Schedule http://s.taobao.com/search?q=OPPO&bcoffset=-6&ntoffset=-6&p4ppushleft=1%2C48&s=176
+2020-08-29 08:16:30.307 | SUCCESS  | spider.crawler:schedule:134 - successful parse http://s.taobao.com/search?q=OPPO&bcoffset=-6&ntoffset=-6&p4ppushleft=1%2C48&s=176
+2020-08-29 08:16:30.331 | INFO     | spider.crawler:schedule:129 - Schedule http://s.taobao.com/search?q=OPPO&bcoffset=-9&ntoffset=-9&p4ppushleft=1%2C48&s=220
+2020-08-29 08:16:30.849 | SUCCESS  | spider.crawler:schedule:134 - successful parse http://s.taobao.com/search?q=OPPO&bcoffset=-9&ntoffset=-9&p4ppushleft=1%2C48&s=220
+2020-08-29 08:16:30.878 | INFO     | spider.crawler:schedule:129 - Schedule http://s.taobao.com/search?q=OPPO&bcoffset=-12&ntoffset=-12&p4ppushleft=1%2C48&s=264
+2020-08-29 08:16:31.424 | SUCCESS  | spider.crawler:schedule:134 - successful parse http://s.taobao.com/search?q=OPPO&bcoffset=-12&ntoffset=-12&p4ppushleft=1%2C48&s=264
+2020-08-29 08:16:31.451 | INFO     | spider.crawler:schedule:129 - Schedule http://s.taobao.com/search?q=OPPO&bcoffset=-15&ntoffset=-15&p4ppushleft=1%2C48&s=308
+2020-08-29 08:16:32.029 | SUCCESS  | spider.crawler:schedule:134 - successful parse http://s.taobao.com/search?q=OPPO&bcoffset=-15&ntoffset=-15&p4ppushleft=1%2C48&s=308
+2020-08-29 08:16:32.057 | INFO     | spider.crawler:schedule:129 - Schedule http://s.taobao.com/search?q=OPPO&bcoffset=-18&ntoffset=-18&p4ppushleft=1%2C48&s=352
+2020-08-29 08:16:32.600 | SUCCESS  | spider.crawler:schedule:134 - successful parse http://s.taobao.com/search?q=OPPO&bcoffset=-18&ntoffset=-18&p4ppushleft=1%2C48&s=352
+2020-08-29 08:16:32.628 | INFO     | spider.crawler:schedule:129 - Schedule http://s.taobao.com/search?q=OPPO&bcoffset=-21&ntoffset=-21&p4ppushleft=1%2C48&s=396
+2020-08-29 08:16:33.301 | SUCCESS  | spider.crawler:schedule:134 - successful parse http://s.taobao.com/search?q=OPPO&bcoffset=-21&ntoffset=-21&p4ppushleft=1%2C48&s=396
+2020-08-29 08:23:38.187 | SUCCESS  | spider.login:queue_cookies:204 - 保存cookies文件成功！
+2020-08-29 08:23:38.191 | WARNING  | spider.login:logged:166 - 需要安全验证
+2020-08-29 08:23:40.234 | INFO     | spider.login:print_title:192 - 网页标题为：python书_淘宝搜索
+2020-08-29 08:23:40.236 | INFO     | spider.crawler:start:59 - Add http://s.taobao.com/search?q=python书&bcoffset=6&ntoffset=6&p4ppushleft=1%2C48&s=0 to redis.
+2020-08-29 08:23:40.238 | INFO     | spider.crawler:start:59 - Add http://s.taobao.com/search?q=python书&bcoffset=3&ntoffset=3&p4ppushleft=1%2C48&s=44 to redis.
+2020-08-29 08:23:40.240 | INFO     | spider.crawler:start:59 - Add http://s.taobao.com/search?q=python书&bcoffset=0&ntoffset=0&p4ppushleft=1%2C48&s=88 to redis.
+2020-08-29 08:23:40.243 | INFO     | spider.crawler:start:59 - Add http://s.taobao.com/search?q=python书&bcoffset=-3&ntoffset=-3&p4ppushleft=1%2C48&s=132 to redis.
+2020-08-29 08:23:40.249 | INFO     | spider.crawler:start:59 - Add http://s.taobao.com/search?q=python书&bcoffset=-6&ntoffset=-6&p4ppushleft=1%2C48&s=176 to redis.
+2020-08-29 08:23:40.252 | INFO     | spider.crawler:start:59 - Add http://s.taobao.com/search?q=python书&bcoffset=-9&ntoffset=-9&p4ppushleft=1%2C48&s=220 to redis.
+2020-08-29 08:23:40.255 | INFO     | spider.crawler:start:59 - Add http://s.taobao.com/search?q=python书&bcoffset=-12&ntoffset=-12&p4ppushleft=1%2C48&s=264 to redis.
+2020-08-29 08:23:40.260 | INFO     | spider.crawler:start:59 - Add http://s.taobao.com/search?q=python书&bcoffset=-15&ntoffset=-15&p4ppushleft=1%2C48&s=308 to redis.
+2020-08-29 08:23:40.266 | INFO     | spider.crawler:start:59 - Add http://s.taobao.com/search?q=python书&bcoffset=-18&ntoffset=-18&p4ppushleft=1%2C48&s=352 to redis.
+2020-08-29 08:23:40.271 | INFO     | spider.crawler:start:59 - Add http://s.taobao.com/search?q=python书&bcoffset=-21&ntoffset=-21&p4ppushleft=1%2C48&s=396 to redis.
+2020-08-29 08:23:40.273 | INFO     | spider.crawler:schedule:129 - Schedule http://s.taobao.com/search?q=python书&bcoffset=6&ntoffset=6&p4ppushleft=1%2C48&s=0
+2020-08-29 08:23:40.807 | SUCCESS  | spider.crawler:schedule:134 - successful parse http://s.taobao.com/search?q=python书&bcoffset=6&ntoffset=6&p4ppushleft=1%2C48&s=0
+2020-08-29 08:23:40.836 | INFO     | spider.crawler:schedule:129 - Schedule http://s.taobao.com/search?q=python书&bcoffset=3&ntoffset=3&p4ppushleft=1%2C48&s=44
+2020-08-29 08:23:41.305 | SUCCESS  | spider.crawler:schedule:134 - successful parse http://s.taobao.com/search?q=python书&bcoffset=3&ntoffset=3&p4ppushleft=1%2C48&s=44
+2020-08-29 08:23:41.328 | INFO     | spider.crawler:schedule:129 - Schedule http://s.taobao.com/search?q=python书&bcoffset=0&ntoffset=0&p4ppushleft=1%2C48&s=88
+2020-08-29 08:23:41.794 | SUCCESS  | spider.crawler:schedule:134 - successful parse http://s.taobao.com/search?q=python书&bcoffset=0&ntoffset=0&p4ppushleft=1%2C48&s=88
+2020-08-29 08:23:41.825 | INFO     | spider.crawler:schedule:129 - Schedule http://s.taobao.com/search?q=python书&bcoffset=-3&ntoffset=-3&p4ppushleft=1%2C48&s=132
+2020-08-29 08:23:42.334 | SUCCESS  | spider.crawler:schedule:134 - successful parse http://s.taobao.com/search?q=python书&bcoffset=-3&ntoffset=-3&p4ppushleft=1%2C48&s=132
+2020-08-29 08:23:42.360 | INFO     | spider.crawler:schedule:129 - Schedule http://s.taobao.com/search?q=python书&bcoffset=-6&ntoffset=-6&p4ppushleft=1%2C48&s=176
+2020-08-29 08:23:42.914 | SUCCESS  | spider.crawler:schedule:134 - successful parse http://s.taobao.com/search?q=python书&bcoffset=-6&ntoffset=-6&p4ppushleft=1%2C48&s=176
+2020-08-29 08:23:42.936 | INFO     | spider.crawler:schedule:129 - Schedule http://s.taobao.com/search?q=python书&bcoffset=-9&ntoffset=-9&p4ppushleft=1%2C48&s=220
+2020-08-29 08:23:43.502 | SUCCESS  | spider.crawler:schedule:134 - successful parse http://s.taobao.com/search?q=python书&bcoffset=-9&ntoffset=-9&p4ppushleft=1%2C48&s=220
+2020-08-29 08:23:43.526 | INFO     | spider.crawler:schedule:129 - Schedule http://s.taobao.com/search?q=python书&bcoffset=-12&ntoffset=-12&p4ppushleft=1%2C48&s=264
+2020-08-29 08:23:44.127 | SUCCESS  | spider.crawler:schedule:134 - successful parse http://s.taobao.com/search?q=python书&bcoffset=-12&ntoffset=-12&p4ppushleft=1%2C48&s=264
+2020-08-29 08:23:44.155 | INFO     | spider.crawler:schedule:129 - Schedule http://s.taobao.com/search?q=python书&bcoffset=-15&ntoffset=-15&p4ppushleft=1%2C48&s=308
+2020-08-29 08:23:44.636 | SUCCESS  | spider.crawler:schedule:134 - successful parse http://s.taobao.com/search?q=python书&bcoffset=-15&ntoffset=-15&p4ppushleft=1%2C48&s=308
+2020-08-29 08:23:44.672 | INFO     | spider.crawler:schedule:129 - Schedule http://s.taobao.com/search?q=python书&bcoffset=-18&ntoffset=-18&p4ppushleft=1%2C48&s=352
+2020-08-29 08:23:45.257 | SUCCESS  | spider.crawler:schedule:134 - successful parse http://s.taobao.com/search?q=python书&bcoffset=-18&ntoffset=-18&p4ppushleft=1%2C48&s=352
+2020-08-29 08:23:45.281 | INFO     | spider.crawler:schedule:129 - Schedule http://s.taobao.com/search?q=python书&bcoffset=-21&ntoffset=-21&p4ppushleft=1%2C48&s=396
+2020-08-29 08:23:45.763 | SUCCESS  | spider.crawler:schedule:134 - successful parse http://s.taobao.com/search?q=python书&bcoffset=-21&ntoffset=-21&p4ppushleft=1%2C48&s=396
