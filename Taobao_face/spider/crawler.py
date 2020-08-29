@@ -1,11 +1,11 @@
+from setting import PROXY_POOL_URL, MAX_PAGE, PRODUCT, SESSION, MAX_FAIL_TIME, VALID_STATUSES, MYSQL_TABLE, COOKIES_PATH
 from requests.cookies import cookiejar_from_dict
 from requests.exceptions import ReadTimeout
 from spider.request import TaobaoRequest
 from storage.db import RedisQueue
 from json import JSONDecodeError
 from storage.mysql import MySQL
-from loguru import logger
-from setting import *
+from setting import logger
 import requests
 import json
 import re
@@ -19,7 +19,8 @@ class Crawler:
     queue = RedisQueue()
     mysql = MySQL()
 
-    def get_proxy(self):
+    @staticmethod
+    def get_proxy():
         """
         从代理池获取代理
 
@@ -34,7 +35,8 @@ class Crawler:
         except requests.ConnectionError:
             return None
 
-    def get_url(self):
+    @staticmethod
+    def get_url():
         """
         构造url
 
@@ -56,7 +58,8 @@ class Crawler:
             self.queue.add(taobao_request)
             logger.info(f'Add {taobao_request.url} to redis.')
 
-    def parse_detail(self, response):
+    @staticmethod
+    def parse_detail(response):
         """
         解析页面
 
@@ -128,16 +131,17 @@ class Crawler:
             if response and response.status_code in VALID_STATUSES:
                 results = callback(response)
                 if results:
+                    logger.success(f'successful parse {taobao_request.url}')
                     for result in results:
                         if isinstance(result, dict):
                             self.mysql.insert(MYSQL_TABLE, result)
-                            logger.success(f'successful parse {taobao_request.url}')
                 else:
                     self.error(taobao_request)
             else:
                 self.error(taobao_request)
 
-    def unqueue_cookies(self):
+    @staticmethod
+    def unqueue_cookies():
         """
         反序列化cookies
 

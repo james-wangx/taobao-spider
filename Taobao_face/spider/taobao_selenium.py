@@ -20,7 +20,7 @@ from selenium import webdriver
 from setting import *
 import json
 
-# 配置文件地址
+# 配置文件地址，地址栏搜索about:support
 profile_directory = r'C:\Users\18368\AppData\Roaming\Mozilla\Firefox\Profiles\x9hlgi1i.dev-edition-default'
 # 加载配置
 profile = webdriver.FirefoxProfile(profile_directory)

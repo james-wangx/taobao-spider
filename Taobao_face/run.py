@@ -10,10 +10,7 @@
 
 from spider.crawler import Crawler
 from spider.login import Login
-from setting import PATH
-import sys
 
-sys.path.append(PATH)
 if __name__ == '__main__':
 
     # 这三个表单参数在浏览器中复制，可以多次使用，password2猜测为加密后的密码
@@ -27,7 +24,6 @@ if __name__ == '__main__':
     password2 = ''
     login = Login(ua, loginId, password2)
     crawler = Crawler()
-
     if login.logged():
         login.print_title()
         crawler.run()

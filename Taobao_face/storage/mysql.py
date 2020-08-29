@@ -1,4 +1,4 @@
-from setting import *
+from setting import MYSQL_PORT, MYSQL_USER, MYSQL_HOST, MYSQL_DATABASE, MYSQL_PASSWORD
 import pymysql
 
 

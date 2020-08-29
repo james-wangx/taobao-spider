@@ -1,10 +1,9 @@
 from requests.utils import dict_from_cookiejar, cookiejar_from_dict
+from setting import PRODUCT,COOKIES_PATH,SESSION,logger
 from requests.packages import urllib3
 from spider.error import TitleError
 from json import JSONDecodeError
 from urllib.parse import quote
-from loguru import logger
-from setting import *
 import json
 import re
 import os
@@ -43,6 +42,9 @@ class Login:
         self.commit_url = 'https://login.taobao.com/newlogin/login.do?appName=taobao&fromSite=0'
         # 默认重定向url
         self.redirect_url = f'https://s.taobao.com/search?q={PRODUCT}'
+        # 调试用的变量，用于保存网页代码和解析结果
+        self.content = None
+        self.result = None
         urllib3.disable_warnings()
 
     @property
@@ -84,6 +86,30 @@ class Login:
                 return True
         else:
             return False
+
+    def verify_login(self, response):
+        """
+        模拟验证
+
+        :param response:
+        :return:
+        """
+        iframe_url = response.json()['content']['data']['iframeRedirectUrl']
+        iframe_response = SESSION.get(url=iframe_url, headers=self.headers, verify=False)
+
+        remote_url = re.search(r'<iframe src="(.*?)"', iframe_response.text).group(1)
+        remote_response = SESSION.get(url=remote_url, headers=self.headers, verify=False)
+
+        normal_url = remote_response.url
+        normal_response = SESSION.get(url=normal_url, headers=self.headers, verify=False)
+
+        verify_url = re.search(r'window.location.href = "(.*?)"', normal_response.text).group(1) + "1"
+        verify_response = SESSION.get(url=verify_url, headers=self.headers, verify=False)
+
+        safe_login_url = re.search(r'window.location.href = "(.*?)"', verify_response.text).group(1)
+        safe_login_response = SESSION.get(url=safe_login_url, headers=self.headers, verify=False)
+
+        self.redirect_url = re.search(r'"redirectUrl":"(.*?)"', safe_login_response.text).group(1)
 
     def logged(self):
         """
@@ -136,7 +162,11 @@ class Login:
             logger.error(f'登录失败，原因：')
             raise e
         self.queue_cookies()
-        self.redirect_url = response.json()['content']['data']['redirectUrl']
+        if 'iframeRedirectUrl' in response.json()['content']['data']:
+            logger.warning('需要安全验证')
+            self.verify_login(response)
+        else:
+            self.redirect_url = response.json()['content']['data']['redirectUrl']
         return True
 
     def print_title(self):
@@ -161,7 +191,8 @@ class Login:
         else:
             logger.info(f'网页标题为：{title}')
 
-    def queue_cookies(self):
+    @staticmethod
+    def queue_cookies():
         """
         序列化cookies
 
@@ -172,7 +203,8 @@ class Login:
             json.dump(cookies_dict, file)
             logger.success('保存cookies文件成功！')
 
-    def unqueue_cookies(self):
+    @staticmethod
+    def unqueue_cookies():
         """
         反序列化cookies
 
@@ -218,11 +250,10 @@ class Login:
 
 
 if __name__ == '__main__':
-
     # 用户信息参数
-    loginId = ''
-    ua = ''
-    password2 = ''
+    loginId = '18403426152'
+    ua = '134#Bw74UXXwXGfe1uJ6TghVeX0D3QROwKO9sE/w4/PLr3cZRqG2FyMpmOqissj/nVgG4j43dat9+hzMsaBuukEdiZwp3HOyoDVQnPsUU+ni+JdqKXL3ZtwwTq1qijRmNyd3OOH8qkuj+BwfXT7zBtowSsX+q/68oGgzXTpqAduJ+Jo4+TSPZrww+cyKqLLQzne49gGdGBt7/lVN32lmkfmxX9CmrH8USaTN0Ox9TaAUq+3UB45QUBIcBz+X+AI7NmSBlVMmuQRPBXvfdfhrmv1+EnsR4+nZlloatq/+PaAJO3quGNHtvra/MJ2beYlc8V338NTVzLP+VEjIwfEyAasvkGYXSC72G+5HJv9hNt2pONosfarAerQFntrEt8aK4O1w0cPw+I86ciLDgaxmOxnlDkC41PQwW60aSdjcSn77EOnBjyCceyc+IKyZe1molR8cYFLj1rKsntsV0gdK2kqgdZg3ThmiV0IRzNJwnN9JRxw9cvcqOQhkWsjf67Shqmwce1k7a0jV902Ctcub3I1RN0L8RM97uTkF5W7Umo93vei80MMA7RDxBy/LmVa4u+gYxEVOZfyXT2VjX66ep0XXABvevW1+FRbNdv1FLe1AhYZtcnpJhX0iC+90nSRvTc4SfxmEQdL4h7xUwxd/1xh4JWPd/uBSr+CcjcvFYcKzeaJpVMozMp1M5eA+Baf4An73hahb7WfDqocTvtNVtlvlnKS0uUf308aNA3hhCCx60ECnKajt5FHctoVCWuLBq/Tshs8yT/QNYdaCI3aHQlskcebCG66Rv9uYLCLcydQzf7l2riZKLeNEGL3iVoSgzHXImAVcljq5G7yqNlkZ7qiBeelRen1CgfQe+ZC+v8w3MsHWUG9Aj9A5aS0d8hXImWxs5RHN+kZ4hqnftdtDvnf5ZhyKlaaV1kKXhrwhesci4kX4HUu8RS/thmt5mn8Nmbjq2lJ3XmSVnuDp81sejTy5+fpCXPtVvHzmRuBrZgru/MF3GJKfKdGqUFiArROxfvft3Ija6WrBxpPCuM/7gu5/snqt/+Aqy9HGPSRvOLeZ4XdDwNe47FsmYPJMsk5855ho6Xd8OM/v/OgSEk+a3s6YZt5N7l+AEjQq5eWoogGqR0G='
+    password2 = 'b7faf957fb43eeb373b26ad49c0a914f9b99f1527c6c11b82bd68af7a09f35f6d38ce2f86cdde2a81506098f5104a03f993488fddc783ff64aa9e6320d8a34342bde28388f7e120901c5f9a578251404865c30734b5afc4ce1f7bad42c7d79b421e3481b75c301cf5fecf0055d90f63e941e74f980a953fe9e8e1ee3580d45e3'
     login = Login(ua, loginId, password2)
     if login.logged():
         login.print_title()

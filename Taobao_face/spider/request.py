@@ -1,5 +1,5 @@
 from requests import Request
-from setting import *
+from setting import NEED_PROXY, TIMEOUT
 
 
 class TaobaoRequest(Request):

@@ -1,10 +1,10 @@
+from setting import REDIS_KEY,REDIS_PORT,REDIS_HOST,REDIS_PASSWORD
 from spider.request import TaobaoRequest
 from pickle import loads, dumps
 from redis import StrictRedis
-from setting import *
 
 
-class RedisQueue():
+class RedisQueue:
     def __init__(self):
         """
         初始化Redis
@@ -16,7 +16,6 @@ class RedisQueue():
         向队列添加序列化后的Request
 
         :param request: 请求对象
-        :param fail_time: 失败次数
         :return: 添加结果
         """
         if isinstance(request, TaobaoRequest):
@@ -44,8 +43,8 @@ class RedisQueue():
 if __name__ == '__main__':
     db = RedisQueue()
     start_url = 'http://www.baidu.com'
-    taobao_request = TaobaoRequest(url=start_url,callback='Hello')
+    taobao_request = TaobaoRequest(url=start_url, callback='Hello')
     db.add(taobao_request)
     request = db.pop()
     print(request)
-    print(request.need_proxy,request.callback)
+    print(request.need_proxy, request.callback)
