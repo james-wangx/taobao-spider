@@ -13,7 +13,7 @@ from spider.login import Login
 
 if __name__ == '__main__':
 
-    # 这三个表单参数在浏览器中复制，可以多次使用，password2猜测为加密后的密码
+    # 这三个表单参数在浏览器中复制，可以多次使用，ua和password2分别为加密后的账号和密码
     # 获取过程：
     # 1、清除淘宝网的cookies，访问淘宝网：https://www.taobao.com
     # 2、在搜索栏搜索任意商品，跳转到登录页面
