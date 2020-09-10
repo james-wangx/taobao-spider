@@ -22,7 +22,6 @@ class MySQL:
 
     def insert(self, table, data):
         """
-        插入数据
 
         :param table:
         :param data:
@@ -30,6 +29,11 @@ class MySQL:
         """
         keys = ', '.join(data.keys())
         values = ', '.join(['%s'] * len(data))
+        # 判断是否有空值，有则替换成0
+        if data.get('sales') == '':
+            data['sales'] = 0
+        if data.get('comments') == '':
+            data['comments'] = 0
         sql_query = 'insert into %s (%s) values (%s)' % (table, keys, values)
         try:
             self.cursor.execute(sql_query, tuple(data.values()))
