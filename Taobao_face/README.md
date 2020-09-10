@@ -1,3 +1,6 @@
+# 更新日志
+解决mysql高版本int字段插入空值报错问题：https://blog.csdn.net/pineapple_C/article/details/108504105
+
 # 爬取商品列表
 
 
