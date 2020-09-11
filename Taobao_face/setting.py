@@ -14,18 +14,18 @@ REDIS_PASSWORD = env.str('REDIS_PASSWORD', None)
 REDIS_KEY = env.str('REDIS_KEY', 'Taobao')
 
 # mysql 配置
-MYSQL_HOST = env.str('MYSQL_HOST', 'namenode')
+MYSQL_HOST = env.str('MYSQL_HOST', 'localhost')
 MYSQL_PORT = env.int('MYSQL_PORT', 3306)
 MYSQL_USER = env.str('MYSQL_USER', 'root')
-MYSQL_PASSWORD = env.str('MYSQL_PASSWORD', None)
+MYSQL_PASSWORD = env.str('MYSQL_PASSWORD', '15423824563.')
 MYSQL_DATABASE = env.str('MYSQL_DATABASE', 'taobao')
 MYSQL_TABLE = env.str('MYSQL_TABLE', 'details')
 
 # 命令行参数配置
 parser = argparse.ArgumentParser(description='爬取商品列表')
 parser.add_argument('product', type=str, help='要爬取的商品名')
-parser.add_argument('--max_page', type=int, help='爬取的最大页数', default=10)
 parser.add_argument('--timeout', type=int, help='最大请求时间', default=10)
+parser.add_argument('--max_page', type=int, help='爬取的最大页数', default=10)
 parser.add_argument('--need_proxy', type=bool, help='代理开关', default=False)
 parser.add_argument('--max_fail_time', type=int, help='最大失败次数', default=10)
 args = parser.parse_args()
