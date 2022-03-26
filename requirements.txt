@@ -1,0 +1,7 @@
+environs==9.5.0
+loguru==0.6.0
+PyMySQL==1.0.2
+pyquery==1.4.3
+redis==4.2.0
+requests==2.27.1
+selenium==4.1.3
